@@ -24,12 +24,12 @@ p {
 }
 
 .galeria img {
-  width: 200 px;
-  height: 150 px;
+  width: 200px;
+  height: 150px;
   object-fit: cover;
-  margin: 10 px;
-  border: 2 px solid #2c3e50;
-  border-radius: 8 px;
+  margin: 10px;
+  border: 2px solid #2c3e50;
+  border-radius: 8px;
   box-shadow: 2px 2px 6px rgba (0, 0, 0, 0.2);
 }
 
