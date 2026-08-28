@@ -1,99 +1,164 @@
-/* Configurações Globais do Site e Aplicação da Foto de Fundo */
+/* ==========================================================================
+   1. FUNDO DO ESPAÇO E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  
-  /* LINK DIRETO DE IMAGEM (Estrelas no Espaço) - Funciona 100% no GitHub Pages */
-  background-image: url('https://unsplash.com');
-  
-  background-size: cover;          /* Faz a foto cobrir toda a tela */
-  background-position: center;     /* Centraliza a imagem no navegador */
-  background-attachment: fixed;   /* Mantém o fundo fixo ao rolar a página */
+  /* Cria uma nebulosa roxa e azul profunda via código puro (nunca quebra) */
+  background: radial-gradient(circle at 20% 30%, #2e1a47 0%, #0d0814 50%, #05030a 100%),
+              radial-gradient(circle at 80% 70%, #142542 0%, #0d0814 60%);
+  background-blend-mode: screen;
+  background-attachment: fixed;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  color: #ffffff;                  /* Letras totalmente brancas */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #f7fafc;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow-x: hidden;              /* Protege contra quebras na animação de entrada */
+  padding: 40px 20px;
+  overflow-x: hidden;
 }
 
-/* Caixa transparente escura para proteger o texto e dar leitura */
+/* ==========================================================================
+   2. CONTAINER PRINCIPAL (ESTILO VIDRO ESPACIAL)
+   ========================================================================== */
 .container {
-  max-width: 1000px;
-  background-color: rgba(14, 10, 24, 0.88); /* Fundo escuro translúcido */
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);               /* Efeito de vidro fosco nas estrelas */
-  margin-top: 20px;
-  margin-bottom: 20px;
+  max-width: 950px;
+  width: 100%;
+  background: rgba(14, 10, 26, 0.75);
+  border: 1px solid rgba(195, 155, 250, 0.15);
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
 }
 
-/* Animação Suave de Entrada (O site surge subindo levemente) */
+/* ==========================================================================
+   3. ANIMAÇÃO DE ENTRADA DO SITE
+   ========================================================================== */
 .animar-entrada {
-  animation: subirEntrada 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: surgimentoEspacial 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes subirEntrada {
-  from {
-    opacity: 0;
-    transform: translateY(35px); /* Começa um pouco abaixo */
-  }
+@keyframes surgimentoEspacial {
   to {
     opacity: 1;
-    transform: translateY(0);    /* Termina na posição correta */
+    transform: translateY(0);
   }
 }
 
-/* Título Centralizado */
-h1 {
+/* ==========================================================================
+   4. TIPOGRAFIA E ELEMENTOS TEXTUAIS
+   ========================================================================== */
+.header-site {
   text-align: center;
-  color: #c39bfa;               /* Tom lilás espacial */
-  font-size: 2.4rem;
-  margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-/* Parágrafos Ampliados e Justificados */
+h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff 30%, #c39bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 15px 0;
+}
+
+.linha-decorativa {
+  height: 4px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, #c39bfa, transparent);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
 p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #cbd5e1;
   text-align: justify;
-  line-height: 1.7;
-  font-size: 1.25rem;
-  color: #e2e8f0;
-  margin-bottom: 25px;
+  margin: 0;
 }
 
-/* Estilização da Lista em Tópicos */
+.introducao p span {
+  color: #c39bfa;
+  font-weight: bold;
+  border-bottom: 2px solid rgba(195, 155, 250, 0.3);
+}
+
+/* ==========================================================================
+   5. LISTA DE LUAS EM CARTÕES SCI-FI
+   ========================================================================== */
 .lista-luas {
-  margin: 25px 0;
-  padding-left: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .lista-luas li {
-  font-size: 1.2rem;            /* Tamanho de fonte aumentado nos tópicos */
-  line-height: 1.7;
-  margin-bottom: 20px;          /* Espaçamento confortável entre as luas */
-  color: #f7fafc;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid #c39bfa;
+  padding: 25px;
+  border-radius: 0 16px 16px 0;
+  transition: all 0.3s ease;
 }
 
-/* Destaque para o nome de cada Lua */
-.lista-luas strong {
-  color: #d6bcfa;               /* Lilás brilhante nos nomes das luas */
-  font-size: 1.25rem;
+.lista-luas li:hover {
+  background: rgba(195, 155, 250, 0.06);
+  transform: translateX(8px);
+  border-left-color: #ffffff;
+  box-shadow: -5px 5px 20px rgba(195, 155, 250, 0.1);
 }
 
-/* Layout da Galeria */
+.lua-nome {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e2d1ff;
+  margin-bottom: 8px;
+}
+
+.planeta-pai {
+  font-size: 1rem;
+  color: #a0aec0;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.conclusao {
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 30px;
+}
+
+/* ==========================================================================
+   6. GALERIA DE LUAS CIRCULARES (ESTILO ORBITAL)
+   ========================================================================== */
+.galeria-container {
+  margin-top: 50px;
+}
+
+.galeria-container h2 {
+  font-size: 1.6rem;
+  color: #c39bfa;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
 .galeria {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   flex-wrap: wrap;
-  margin-top: 40px;
 }
 
 .galeria figure {
@@ -101,35 +166,41 @@ p {
   text-align: center;
 }
 
-/* Imagens das Luas Circulares (Estilo Planetas) e Configurações de Movimento */
+/* Imagens Estilo Eclipse Planetário */
 .galeria img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #c39bfa;
-  box-shadow: 0 0 15px rgba(195, 155, 250, 0.3);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease;
+  border: 2px solid rgba(195, 155, 250, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
-/* Movimentação Física e Brilho ao Passar o Mouse (Hover) */
+/* Movimentação e Efeito Brilho Galáctico ao Passar o Mouse (Hover) */
 .galeria img:hover {
-  transform: scale(1.15) translateY(-8px);     /* Cresce 15% e flutua levemente */
-  border-color: #f3ebff;                        /* Deixa o contorno da imagem aceso */
-  box-shadow: 0 12px 25px rgba(195, 155, 250, 0.85); /* Expande um brilho roxo vibrante */
+  transform: scale(1.18) translateY(-10px);
+  border-color: #ffffff;
+  box-shadow: 0 15px 30px rgba(195, 155, 250, 0.7), 
+              0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Legendas das Luas */
 .galeria figcaption {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 1.1rem;
-  font-weight: bold;
-  color: #e2e8f0;
+  font-weight: 600;
+  color: #a0aec0;
   transition: color 0.3s ease;
 }
 
 .galeria figure:hover figcaption {
-  color: #c39bfa;
+  color: #ffffff;
 }
 
+/* Responsividade Básica */
+@media (max-width: 600px) {
+  .container { padding: 30px 20px; }
+  h1 { font-size: 2rem; }
+  .galeria img { width: 110px; height: 110px; }
+}
