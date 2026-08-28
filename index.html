@@ -3,56 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Satélites do nosso sistema</title>
+  <title>Satélites do Nosso Sistema Solar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- A classe .animar-entrada faz o conteúdo principal surgir deslizando suavemente -->
+  <!-- O container principal recebe as animações de surgimento suave -->
   <main class="container animar-entrada">
-    <h1>Introduzindo os principais Satélites do Sistema Solar</h1>
+    
+    <header class="header-site">
+      <h1>Satélites do Sistema Solar</h1>
+      <div class="linha-decorativa"></div>
+    </header>
 
-    <p>Os satélites são corpos que orbitam ao redor de um planeta, planeta anão ou asteroide.
-       Eles se dividem em duas grandes categorias: naturais (como as luas) e artificiais (construídos por humanos).
-    </p>
+    <section class="introducao">
+      <p>Os satélites são corpos que orbitam ao redor de um planeta, planeta anão ou asteroide. Eles se dividem em duas grandes categorias: <span>naturais</span> (como as luas) e <span>artificiais</span> (construídos por humanos).</p>
+    </section>
 
-    <!-- Lista estruturada em tópicos -->
-    <ul class="lista-luas">
-      <li><strong>Encélado (Saturno):</strong> É um mundo congelado e super brilhante. Ela possui um oceano subterrâneo líquido e gigantescos gêiseres no polo sul que lançam jatos de água e gelo diretamente no espaço.</li>
-      <li><strong>Europa (Júpiter):</strong> Sua superfície é uma crosta de gelo lisa e cheia de rachaduras coloridas. Cientistas acreditam que abaixo desse gelo existe duas vezes mais água líquida do que em todos os oceanos da Terra juntos, sendo um dos melhores lugares para procurar vida extraterrestre.</li>
-      <li><strong>Ganimedes (Júpiter):</strong> É a maior lua do Sistema Solar (maior até que o planeta Mercúrio!). É o único satélite natural conhecido que possui seu próprio campo magnético, além de ter várias camadas de gelo e rocha.</li>
-      <li><strong>Lua (Terra):</strong> O nosso satélite natural controla as marés dos oceanos e ajuda a manter o eixo da Terra estável, o que garante as estações do ano como conhecemos. É também o único corpo celeste além da Terra onde os humanos já pisaram.</li>
-      <li><strong>Titã (Saturno):</strong> É a única lua do Sistema Solar com uma atmosfera densa (feita de nitrogênio, como a nossa). Em vez de água, chove metano e etano líquido por lá, formando rios, lagos e mares congelantes na superfície.</li>
-    </ul>
+    <!-- Lista transformada em cartões espaciais interativos -->
+    <section class="conteudo-luas">
+      <ul class="lista-luas">
+        <li>
+          <div class="lua-nome">Encélado <span class="planeta-pai">(Saturno)</span></div>
+          <p>É um mundo congelado e super brilhante. Ela possui um oceano subterrâneo líquido e gigantescos gêiseres no polo sul que lançam jatos de água e gelo diretamente no espaço.</p>
+        </li>
+        <li>
+          <div class="lua-nome">Europa <span class="planeta-pai">(Júpiter)</span></div>
+          <p>Sua superfície é uma crosta de gelo lisa e cheia de rachaduras coloridas. Cientistas acreditam que abaixo desse gelo existe duas vezes mais água líquida do que em todos os oceanos da Terra juntos, sendo um dos melhores lugares para procurar vida extraterrestre.</p>
+        </li>
+        <li>
+          <div class="lua-nome">Ganimedes <span class="planeta-pai">(Júpiter)</span></div>
+          <p>É a maior lua do Sistema Solar (maior até que o planeta Mercúrio!). É o único satélite natural conhecido que possui seu próprio campo magnético, além de ter várias camadas de gelo e rocha.</p>
+        </li>
+        <li>
+          <div class="lua-nome">Lua <span class="planeta-pai">(Terra)</span></div>
+          <p>O nosso satélite natural controla as marés dos oceanos e ajuda a manter o eixo da Terra estável, o que garante as estações do ano como conhecemos. É também o único corpo celeste além da Terra onde os humanos já pisaram.</p>
+        </li>
+        <li>
+          <div class="lua-nome">Titã <span class="planeta-pai">(Saturno)</span></div>
+          <p>É a única lua do Sistema Solar com uma atmosfera densa (feita de nitrogênio, como a nossa). Em vez de água, chove metano e etano líquido por lá, formando rios, lagos e mares congelantes na superfície.</p>
+        </li>
+      </ul>
+    </section>
 
-    <p>
-      Os satélites naturais se formam junto com o planeta a partir de poeira cósmica, por colisões gigantescas que lançam detritos no espaço, ou ao capturar asteroides que passavam por perto. 
-      Já os artificiais são fabricados por humanos e inseridos em órbita através de lançamentos de foguetes.
-    </p>
+    <section class="conclusao">
+      <p>Os satélites naturais se formam junto com o planeta a partir de poeira cósmica, por colisões gigantescas que lançam detritos no espaço, ou ao capturar asteroides que passavam por perto. Já os artificiais são fabricados por humanos e inseridos em órbita através de lançamentos de foguetes.</p>
+    </section>
 
-    <!-- Galeria com caminhos e extensões originais mantidos -->
-    <div class="galeria">
-      <figure>
-        <img src="Encélado.jpeg" alt="Lua Encélado">
-        <figcaption>Encélado</figcaption>
-      </figure>
-      <figure>
-        <img src="europa.jpeg" alt="Lua Europa">
-        <figcaption>Europa</figcaption>
-      </figure>
-      <figure>
-        <img src="Ganimedes.jpeg" alt="Lua Ganimedes">
-        <figcaption>Ganimedes</figcaption>
-      </figure>
-      <figure>
-        <img src="Moon.jpeg" alt="Lua Terrestre">
-        <figcaption>Lua</figcaption>
-      </figure>
-      <figure>
-        <img src="Titã.jpeg" alt="Lua Titã">
-        <figcaption>Titã</figcaption>
-      </figure>
-    </div>
+    <!-- Galeria de Luas Estilo Órbita Planeta -->
+    <footer class="galeria-container">
+      <h2>Exploração Visual</h2>
+      <div class="galeria">
+        <figure>
+          <img src="Encélado.jpeg" alt="Lua Encélado">
+          <figcaption>Encélado</figcaption>
+        </figure>
+        <figure>
+          <img src="europa.jpeg" alt="Lua Europa">
+          <figcaption>Europa</figcaption>
+        </figure>
+        <figure>
+          <img src="Ganimedes.jpeg" alt="Lua Ganimedes">
+          <figcaption>Ganimedes</figcaption>
+        </figure>
+        <figure>
+          <img src="Moon.jpeg" alt="Lua Terrestre">
+          <figcaption>Lua</figcaption>
+        </figure>
+        <figure>
+          <img src="Titã.jpeg" alt="Lua Titã">
+          <figcaption>Titã</figcaption>
+        </figure>
+      </div>
+    </footer>
+
   </main>
 
 </body>
