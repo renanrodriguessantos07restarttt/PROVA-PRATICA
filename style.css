@@ -1,14 +1,15 @@
-/* Configurações Globais e Fundo de Espaço */
+/* Configurações Globais e Imagem de Fundo Enviada */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 20px;
   min-height: 100vh;
-  background-image: url('https://unsplash.com');
+  /* Aplica a foto do espaço no fundo do site todo */
+  background-image: url('espaco.png'); 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* O fundo fica parado enquanto a página rola */
-  color: #f0f4f8; /* Letras claras para fundo escuro */
+  background-attachment: fixed; /* O fundo do espaço fica fixo ao rolar a página */
+  color: #f0f4f8; /* Letras claras para contrastar com o fundo roxo */
   display: flex;
   justify-content: center;
 }
@@ -16,25 +17,25 @@ body {
 /* Caixa Protetora do Conteúdo (Efeito Vidro Escuro) */
 .container {
   max-width: 900px;
-  background-color: rgba(15, 23, 42, 0.85); /* Fundo escuro semitransparente */
+  background-color: rgba(15, 12, 30, 0.85); /* Fundo escuro levemente roxo/azul para combinar */
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px); /* Desfoca suavemente as estrelas atrás do texto */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px); /* Desfoca suavemente as estrelas do fundo atrás do texto */
 }
 
 /* Título Principal */
 h1 {
   text-align: center;
-  color: #63b3ed; /* Azul brilhante espacial */
+  color: #b794f4; /* Tom lilás/roxo claro que combina com a nebulosa */
   font-size: 2.2rem;
   margin-top: 0;
   margin-bottom: 25px;
 }
 
-/* Textos e Parágrafos (Maiores e mais legíveis) */
+/* Textos e Parágrafos Maiores e Legíveis */
 p {
-  font-size: 1.15rem; /* Letras maiores */
+  font-size: 1.15rem; 
   line-height: 1.7;
   text-align: justify;
   margin-bottom: 20px;
@@ -49,12 +50,12 @@ p {
 .lista-luas li {
   font-size: 1.1rem;
   line-height: 1.7;
-  margin-bottom: 15px; /* Espaço confortável entre os tópicos */
+  margin-bottom: 15px; 
   color: #e2e8f0;
 }
 
 .lista-luas strong {
-  color: #90cdf4; /* Destaca o nome das luas em azul claro */
+  color: #d6bcfa; /* Destaca o nome das luas em roxo claro */
 }
 
 /* Galeria Responsiva */
@@ -71,18 +72,18 @@ p {
   text-align: center;
 }
 
-/* Customização dos Cards de Imagem */
+/* Fotos das Luas em Formato Circular (Planetas) */
 .galeria img {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border-radius: 50%; /* Transforma as fotos em círculos (como planetas!) */
-  border: 3px solid #63b3ed;
-  box-shadow: 0 0 15px rgba(99, 179, 237, 0.4);
+  border-radius: 50%; 
+  border: 3px solid #b794f4;
+  box-shadow: 0 0 15px rgba(183, 148, 244, 0.4);
   transition: transform 0.3s ease;
 }
 
-/* Efeito ao passar o mouse na imagem */
+/* Efeito ao passar o mouse */
 .galeria img:hover {
   transform: scale(1.1);
 }
