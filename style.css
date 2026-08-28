@@ -1,41 +1,40 @@
-/* Configurações Globais do Site e Aplicação da Foto de Fundo Correta */
+/* Configurações Globais do Site e Aplicação da Foto de Fundo Enviada */
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #0e0a18; 
   
-  /* CAMINHO CORRIGIDO: Entra na pasta img para buscar o arquivo */
-  background-image: url('./img/download.jpeg'); 
+  /* LINK DIRETO DA INTERNET: Aplica a imagem do espaço no fundo do site inteiro */
+  background-image: url('https://envatousercontent.com');
   
-  background-size: cover;          
-  background-position: center;     
-  background-attachment: fixed;   
+  background-size: cover;          /* Faz a foto cobrir toda a tela sem distorcer */
+  background-position: center;     /* Centraliza a imagem no navegador */
+  background-attachment: fixed;   /* Mantém o fundo fixo enquanto o texto rola */
 }
 
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  color: #ffffff;                  /* Letras brancas */
+  color: #ffffff;                  /* Letras totalmente brancas */
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow-x: hidden;              /* Previne quebras nas animações */
+  overflow-x: hidden;              /* Protege contra quebras na animação de entrada */
 }
 
-/* Película Escura Protetora do Texto */
+/* Caixa transparente escura para proteger o texto e dar leitura */
 .container {
   max-width: 1000px;
-  background-color: rgba(14, 10, 24, 0.88); /* Caixa translúcida escura */
+  background-color: rgba(14, 10, 24, 0.88); /* Fundo escuro translúcido */
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);               /* Efeito de vidro fosco */
+  backdrop-filter: blur(4px);               /* Efeito de vidro fosco nas estrelas */
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* Animação Suave de Entrada */
+/* Animação Suave de Entrada (O site surge subindo levemente) */
 .animar-entrada {
   animation: subirEntrada 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
@@ -43,18 +42,18 @@ body {
 @keyframes subirEntrada {
   from {
     opacity: 0;
-    transform: translateY(35px);
+    transform: translateY(35px); /* Começa um pouco abaixo */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0);    /* Termina na posição correta */
   }
 }
 
 /* Título Centralizado */
 h1 {
   text-align: center;
-  color: #c39bfa;               
+  color: #c39bfa;               /* Tom lilás que combina com os gases da nebulosa */
   font-size: 2.4rem;
   margin-top: 0;
   margin-bottom: 30px;
@@ -76,15 +75,15 @@ p {
 }
 
 .lista-luas li {
-  font-size: 1.2rem;
+  font-size: 1.2rem;            /* Tamanho de fonte aumentado nos tópicos */
   line-height: 1.7;
-  margin-bottom: 20px;
+  margin-bottom: 20px;          /* Espaçamento confortável entre as luas */
   color: #f7fafc;
 }
 
 /* Destaque para o nome de cada Lua */
 .lista-luas strong {
-  color: #d6bcfa;               
+  color: #d6bcfa;               /* Lilás brilhante nos nomes das luas */
   font-size: 1.25rem;
 }
 
@@ -102,7 +101,7 @@ p {
   text-align: center;
 }
 
-/* Imagens das Luas Circulares */
+/* Imagens das Luas Circulares (Estilo Planetas) e Configurações de Movimento */
 .galeria img {
   width: 160px;
   height: 160px;
@@ -110,15 +109,16 @@ p {
   border-radius: 50%;
   border: 3px solid #c39bfa;
   box-shadow: 0 0 15px rgba(195, 155, 250, 0.3);
+  /* Controla o retorno suave da animação ao retirar o cursor do mouse */
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease;
   cursor: pointer;
 }
 
-/* Movimentação Física e Brilho (Hover) */
+/* Movimentação Física e Brilho ao Passar o Mouse (Hover) */
 .galeria img:hover {
-  transform: scale(1.15) translateY(-8px);     
-  border-color: #f3ebff;                        
-  box-shadow: 0 12px 25px rgba(195, 155, 250, 0.85); 
+  transform: scale(1.15) translateY(-8px);     /* Cresce 15% e flutua levemente */
+  border-color: #f3ebff;                        /* Deixa o contorno da imagem aceso */
+  box-shadow: 0 12px 25px rgba(195, 155, 250, 0.85); /* Expande um brilho roxo vibrante */
 }
 
 /* Legendas das Luas */
@@ -130,7 +130,7 @@ p {
   transition: color 0.3s ease;
 }
 
+/* O texto do nome acompanha a iluminação quando o bloco recebe o mouse */
 .galeria figure:hover figcaption {
   color: #c39bfa;
 }
-
