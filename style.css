@@ -1,15 +1,16 @@
-/* Configurações Globais do Site e Aplicação da Foto de Fundo */
+/* Configurações Globais do Site e Aplicação da Foto de Fundo Correta */
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  /* Cor escura de reserva para eliminar as partes brancas imediatamente */
   background-color: #0e0a18; 
-  /* Caminho reforçado para o GitHub Pages encontrar o arquivo */
-  background-image: url('./download.jpeg'); 
-  background-size: cover;          /* Faz a foto cobrir toda a tela */
-  background-position: center;     /* Centraliza a imagem */
-  background-attachment: fixed;   /* Mantém o fundo fixo ao rolar a página */
+  
+  /* CAMINHO CORRIGIDO: Entra na pasta img para buscar o arquivo */
+  background-image: url('./img/download.jpeg'); 
+  
+  background-size: cover;          
+  background-position: center;     
+  background-attachment: fixed;   
 }
 
 body {
