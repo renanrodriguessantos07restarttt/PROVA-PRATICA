@@ -1,95 +1,129 @@
-/* Configurações Globais e Fundo do Espaço Todo */
+/* Configurações do site todo e Imagem de Fundo */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
   min-height: 100vh;
-  background-image: url('espaco.png'); /* Caminho limpo para a sua foto roxa */
+  background-image: url('espaco.png'); 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Mantém o espaço fixo ao rolar a tela */
-  color: #f0f4f8;
+  background-attachment: fixed;
+  color: #ffffff;
   display: flex;
   justify-content: center;
+  overflow-x: hidden; /* Evita barras de rolagem estranhas durante a animação */
 }
 
-/* Caixa Protetora (Efeito Vidro Escuro) */
+/* Caixa transparente escura */
 .container {
-  max-width: 900px;
-  background-color: rgba(15, 12, 30, 0.88); /* Mistura de preto com azul/roxo do espaço */
+  max-width: 1000px;
+  background-color: rgba(15, 10, 25, 0.85);
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px); /* Efeito blur nas estrelas atrás do texto */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
 }
 
-/* Título */
+/* ==========================================================================
+   ANIMAÇÃO DE ENTRADA DO SITE
+   ========================================================================== */
+.animar-entrada {
+  animation: subirEntrada 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes subirEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* Começa 40px abaixo e sobe */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título Principal */
 h1 {
   text-align: center;
-  color: #b794f4; /* Tom lilás espacial */
-  font-size: 2.2rem;
+  color: #c39bfa;
+  font-size: 2.4rem;
   margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* Parágrafos grandes e legíveis */
+p {
+  text-align: justify;
+  line-height: 1.7;
+  font-size: 1.25rem;
+  color: #e2e8f0;
   margin-bottom: 25px;
 }
 
-/* Parágrafos maiores */
-p {
-  font-size: 1.15rem; 
-  line-height: 1.7;
-  text-align: justify;
-  margin-bottom: 20px;
-}
-
-/* Configuração dos Tópicos */
+/* Estilização da lista em tópicos */
 .lista-luas {
   margin: 25px 0;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .lista-luas li {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.7;
-  margin-bottom: 15px; 
-  color: #e2e8f0;
+  margin-bottom: 20px;
+  color: #f7fafc;
 }
 
 .lista-luas strong {
-  color: #d6bcfa; /* Destaca o nome da lua em roxo claro */
+  color: #d6bcfa;
+  font-size: 1.25rem;
 }
 
-/* Galeria Flexbox */
+/* Galeria de Fotos */
 .galeria {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
-  margin-top: 35px;
+  margin-top: 40px;
 }
 
 .galeria figure {
   margin: 0;
   text-align: center;
+  perspective: 1000px; /* Dá profundidade para efeitos 3D se quiser futuramente */
 }
 
-/* Fotos Redondas Estilo Planetas */
+/* Fotos das Luas e Configuração de Movimento */
 .galeria img {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 50%; 
-  border: 3px solid #b794f4;
-  box-shadow: 0 0 15px rgba(183, 148, 244, 0.5);
-  transition: transform 0.3s ease;
+  border-radius: 50%;
+  border: 3px solid #c39bfa;
+  box-shadow: 0 0 15px rgba(195, 155, 250, 0.3);
+  /* Transição suave para o movimento do mouse voltar ao normal ao tirar o cursor */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  cursor: pointer;
 }
 
-/* Animação ao passar o mouse */
+/* ==========================================================================
+   MOVIMENTAÇÃO AO PASSAR O MOUSE NA IMAGEM (HOVER)
+   ========================================================================== */
 .galeria img:hover {
-  transform: scale(1.1);
+  transform: scale(1.15) translateY(-8px); /* Aumenta 15% e flutua levemente para cima */
+  border-color: #e2d1ff; /* Deixa a borda mais clara e brilhante */
+  box-shadow: 0 12px 25px rgba(195, 155, 250, 0.8); /* Intensifica o brilho roxo galáctico */
 }
 
 .galeria figcaption {
-  margin-top: 8px;
-  font-size: 1rem;
+  margin-top: 10px;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: #cbd5e1;
+  color: #e2e8f0;
+  transition: color 0.3s ease;
+}
+
+/* O texto do nome da lua também brilha levemente quando passa o mouse na foto */
+.galeria figure:hover figcaption {
+  color: #c39bfa;
 }
