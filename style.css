@@ -1,32 +1,33 @@
-/* Configurações do site todo e Imagem de Fundo */
+/* Configurações Globais do Site e Aplicação da Foto de Fundo Correta */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
   min-height: 100vh;
-  background-image: url('espaco.png'); 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #ffffff;
+  
+  /* Corrigido para o nome exato do seu arquivo de imagem do espaço roxo */
+  background-image: url('download.jpeg'); 
+  background-size: cover;          /* Faz a foto cobrir toda a tela sem distorcer */
+  background-position: center;     /* Centraliza o fundo no navegador */
+  background-attachment: fixed;   /* Efeito paralisado: o fundo fica fixo na rolagem */
+  
+  color: #ffffff;                  /* Letras brancas para contraste no fundo escuro */
   display: flex;
   justify-content: center;
-  overflow-x: hidden; /* Evita barras de rolagem estranhas durante a animação */
+  overflow-x: hidden;              /* Previne quebras visuais durante as animações */
 }
 
-/* Caixa transparente escura */
+/* Película Escura Protetora do Texto (Evita que o texto suma nas estrelas) */
 .container {
   max-width: 1000px;
-  background-color: rgba(15, 10, 25, 0.85);
+  background-color: rgba(14, 10, 24, 0.88); /* Preto levemente azulado e translúcido */
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);               /* Leve efeito de vidro fosco nas estrelas */
 }
 
-/* ==========================================================================
-   ANIMAÇÃO DE ENTRADA DO SITE
-   ========================================================================== */
+/* Animação Suave de Entrada (O site surge subindo levemente) */
 .animar-entrada {
   animation: subirEntrada 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
@@ -34,24 +35,24 @@ body {
 @keyframes subirEntrada {
   from {
     opacity: 0;
-    transform: translateY(40px); /* Começa 40px abaixo e sobe */
+    transform: translateY(35px); /* Inicia deslocado para baixo */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0);    /* Termina no lugar correto */
   }
 }
 
-/* Título Principal */
+/* Título Centralizado */
 h1 {
   text-align: center;
-  color: #c39bfa;
+  color: #c39bfa;               /* Tom lilás que combina com os gases da nebulosa */
   font-size: 2.4rem;
   margin-top: 0;
   margin-bottom: 30px;
 }
 
-/* Parágrafos grandes e legíveis */
+/* Parágrafos Ampliados e Justificados */
 p {
   text-align: justify;
   line-height: 1.7;
@@ -60,7 +61,7 @@ p {
   margin-bottom: 25px;
 }
 
-/* Estilização da lista em tópicos */
+/* Estilização da Lista em Tópicos */
 .lista-luas {
   margin: 25px 0;
   padding-left: 25px;
@@ -73,12 +74,13 @@ p {
   color: #f7fafc;
 }
 
+/* Destaque para o nome de cada Lua */
 .lista-luas strong {
-  color: #d6bcfa;
+  color: #d6bcfa;               /* Lilás brilhante nos nomes das luas */
   font-size: 1.25rem;
 }
 
-/* Galeria de Fotos */
+/* Layout da Galeria */
 .galeria {
   display: flex;
   justify-content: center;
@@ -90,10 +92,9 @@ p {
 .galeria figure {
   margin: 0;
   text-align: center;
-  perspective: 1000px; /* Dá profundidade para efeitos 3D se quiser futuramente */
 }
 
-/* Fotos das Luas e Configuração de Movimento */
+/* Imagens em Formato Circular (Estilo Planetas) e Configurações de Movimento */
 .galeria img {
   width: 160px;
   height: 160px;
@@ -101,20 +102,19 @@ p {
   border-radius: 50%;
   border: 3px solid #c39bfa;
   box-shadow: 0 0 15px rgba(195, 155, 250, 0.3);
-  /* Transição suave para o movimento do mouse voltar ao normal ao tirar o cursor */
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  /* Controla o retorno suave da animação ao retirar o cursor do mouse */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease;
   cursor: pointer;
 }
 
-/* ==========================================================================
-   MOVIMENTAÇÃO AO PASSAR O MOUSE NA IMAGEM (HOVER)
-   ========================================================================== */
+/* Movimentação Física e Brilho ao Passar o Mouse (Hover) */
 .galeria img:hover {
-  transform: scale(1.15) translateY(-8px); /* Aumenta 15% e flutua levemente para cima */
-  border-color: #e2d1ff; /* Deixa a borda mais clara e brilhante */
-  box-shadow: 0 12px 25px rgba(195, 155, 250, 0.8); /* Intensifica o brilho roxo galáctico */
+  transform: scale(1.15) translateY(-8px);     /* Cresce 15% e flutua levemente */
+  border-color: #f3ebff;                        /* Deixa o contorno da imagem aceso */
+  box-shadow: 0 12px 25px rgba(195, 155, 250, 0.85); /* Expande um brilho roxo vibrante */
 }
 
+/* Legendas das Luas */
 .galeria figcaption {
   margin-top: 10px;
   font-size: 1.1rem;
@@ -123,7 +123,7 @@ p {
   transition: color 0.3s ease;
 }
 
-/* O texto do nome da lua também brilha levemente quando passa o mouse na foto */
+/* O texto do nome acompanha a iluminação quando o bloco recebe o mouse */
 .galeria figure:hover figcaption {
   color: #c39bfa;
 }
