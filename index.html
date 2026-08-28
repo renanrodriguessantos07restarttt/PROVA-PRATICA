@@ -1,69 +1,53 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Satélites do nosso sistema</title>
-  <!-- Link que conecta este HTML ao arquivo de estilo externo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satélites do Nosso Sistema Solar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Introduzindo os principais Satélite do Sitstema Solar</h1>
 
-  <p>Os satélites são corpos que orbitam ao redor de um planeta, planeta anão ou asteroide.
-     Eles se dividem em duas grandes categorias: naturais (como as luas) e artificiais (construídos por humanos).
-  </p> <!-- FECHOU O PARÁGRAFO CORRETAMENTE AQUI -->
+  <main class="container">
+    <h1>Principais Satélites do Sistema Solar</h1>
 
-  <!-- ABRIU UM NOVO PARÁGRAFO APENAS PARA AS LUAS -->
-  <p>
-    <strong>Encélado (Saturno):</strong> É um mundo congelado e super brilhante.
-    Ela possui um oceano subterrâneo líquido e gigantescos gêiseres no polo sul que lançam jatos de água e gelo diretamente no espaço.<br><br>
+    <p>Os satélites são corpos que orbitam ao redor de um planeta, planeta anão ou asteroide. Eles se dividem em duas grandes categorias: naturais (como as luas) e artificiais (construídos por humanos).</p>
 
-    <strong>Europa (Júpiter):</strong> Sua superfície é uma crosta de gelo lisa e cheia de rachaduras coloridas.
-    Cientistas acreditam que abaixo desse gelo existe duas vezes mais água líquida do que em todos os oceanos da Terra juntos, sendo um dos melhores lugares para procurar vida extraterrestre.<br><br>
+    <!-- Lista de Luas transformada em tópicos limpos -->
+    <ul class="lista-luas">
+      <li><strong>Encélado (Saturno):</strong> Mundo congelado e brilhante. Possui um oceano subterrâneo líquido e gigantescos gêiseres no polo sul que lançam jatos de água e gelo no espaço.</li>
+      <li><strong>Europa (Júpiter):</strong> Crosta de gelo lisa e com rachaduras coloridas. Cientistas acreditam que abaixo desse gelo existe duas vezes mais água líquida do que na Terra.</li>
+      <li><strong>Ganimedes (Júpiter):</strong> Maior lua do Sistema Solar (maior que Mercúrio). É o único satélite natural conhecido que possui seu próprio campo magnético.</li>
+      <li><strong>Lua (Terra):</strong> Controla as marés e estabiliza o eixo da Terra, garantindo as estações do ano. É o único corpo celeste além da Terra onde humanos já pisaram.</li>
+      <li><strong>Titã (Saturno):</strong> Única lua com atmosfera densa. Em vez de água, chove metano e etano líquido por lá, formando rios e mares congelantes.</li>
+    </ul>
 
-    <strong>Ganimedes (Júpiter):</strong> É a maior lua do Sistema Solar (maior até que o planeta Mercúrio!).
-    É o único satélite natural conhecido que possui seu próprio campo magnético, além de ter várias camadas de gelo e rocha.<br><br>
+    <p>Os satélites naturais se formam junto com o planeta a partir de poeira cósmica, por colisões gigantescas ou capturando asteroides. Já os artificiais são fabricados por humanos e inseridos em órbita por foguetes.</p>
 
-    <strong>Lua (Terra):</strong> O nosso satélite natural controla as marés dos oceanos e ajuda a manter o eixo da Terra estável, o que garante as estações do ano como conhecemos.
-    É também o único corpo celeste além da Terra onde os humanos já pisaram.<br><br>
+    <!-- Galeria de Imagens Otimizada -->
+    <div class="galeria">
+      <figure>
+        <img src="encelado.jpg" alt="Lua Encélado">
+        <figcaption>Encélado</figcaption>
+      </figure>
+      <figure>
+        <img src="europa.jpg" alt="Lua Europa">
+        <figcaption>Europa</figcaption>
+      </figure>
+      <figure>
+        <img src="ganimedes.jpg" alt="Lua Ganimedes">
+        <figcaption>Ganimedes</figcaption>
+      </figure>
+      <figure>
+        <img src="moon.jpg" alt="Lua Terrestre">
+        <figcaption>Lua</figcaption>
+      </figure>
+      <figure>
+        <img src="tita.jpg" alt="Lua Titã">
+        <figcaption>Titã</figcaption>
+      </figure>
+    </div>
+  </main>
 
-    <strong>Titã (Saturno):</strong> É a única lua do Sistema Solar com uma atmosfera densa (feita de nitrogênio, como a nossa).
-    Em vez de água, chove metano e etano líquido por lá, formando rios, lagos e mares congelantes na superfície.
-  </p>
-
-  <p>
-    Os satélites naturais se formam junto com o planeta a partir de poeira cósmica, por colisões gigantescas que lançam detritos no espaço, ou ao capturar asteroides que passavam por perto. 
-    Já os artificiais são fabricados por humanos e inseridos em órbita através de lançamentos de foguetes.
-  </p>
-
-   <div class="galeria">
-    <!-- Lua 1 -->
-    <figure>
-      <figcaption>Encélado</figcaption>
-      <img src="Encélado.jpeg" alt="Figura 1 - Encélado">
-    </figure>
-
-    <!-- Lua 2 -->
-    <figure>
-      <figcaption>Europa</figcaption>
-      <img src="europa.jpeg" alt="Figura 2 - europa">
-    </figure>
-
-    <!-- Lua 3 -->
-    <figure>
-      <figcaption>Ganimedes</figcaption>
-      <img src="Ganimedes.jpeg" alt="Figura 3 - Ganimedes">
-    </figure>
-
-    <!-- Lua 4 -->
-    <figure>
-      <figcaption>Lua</figcaption>
-      <img src="Moon.jpeg" alt="Figura 4 - Moon">
-    </figure>
-
-    <!-- Lua 5 -->
-    <figure>
-      <figcaption>Titã</figcaption>
-      <img src="Titã.jpeg" alt="Figura 5 - Titã">
-    </figure>
-  </div>
+</body>
+</html>
